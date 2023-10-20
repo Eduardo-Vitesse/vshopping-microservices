@@ -1,6 +1,14 @@
-﻿namespace VShopping.ProductApi.Repositories
+﻿using VShopping.ProductApi.DTOs;
+using VShopping.ProductApi.Models;
+
+namespace VShopping.ProductApi.Repositories;
+
+public interface ICategoryRepository
 {
-    public interface ICategoryRepository
-    {
-    }
+    Task<IEnumerable<Category>> GetAll();
+    Task<IEnumerable<Category>> GetCategoriesProducts();
+    Task<Category?> GetById(int id);
+    Task<Category> Create(Category category);
+    Task<Category> Update(Category category);
+    Task<Category?> Delete(int id);
 }
